@@ -49,6 +49,7 @@ public class Test2 extends SimpleApplication {
         // 创建材质，使我们可以看见这个六边形
         Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
 //        mat.setColor("red",ColorRGBA.Red);
+        mat.setTexture("ColorMap", assetManager.loadTexture("Common/Textures/MissingMaterial.png"));
         // 使用网格和材质创建一个物体
         Geometry geom = new Geometry("六边形");
         geom.setMesh(mesh);

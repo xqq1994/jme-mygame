@@ -3,6 +3,7 @@ package com.game.test;
 import com.jme3.app.SimpleApplication;
 import com.jme3.light.AmbientLight;
 import com.jme3.light.DirectionalLight;
+import com.jme3.material.MatParam;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Quaternion;
@@ -11,6 +12,8 @@ import com.jme3.scene.Geometry;
 import com.jme3.scene.shape.Box;
 import com.jme3.scene.shape.Sphere;
 import com.jme3.texture.Texture;
+
+import java.lang.reflect.Type;
 
 /**
  * @Author xiaoqiangqiang
@@ -38,17 +41,17 @@ public class Test6 extends SimpleApplication {
         flyCam.setMoveSpeed(10);
 
         // 添加物体
-//        addUnshadedBox();
+        addUnshadedBox();
         addLightingBox();
-
-//        addUnshadedSphere();
-//        addLightingSphere();
+//
+        addUnshadedSphere();
+        addLightingSphere();
 
         // 添加光源
-//        addLight();
+        addLight();
 
         // 把窗口背景改成淡蓝色
-        viewPort.setBackgroundColor(new ColorRGBA(0.6f, 0.7f, 0.9f, 1));
+//        viewPort.setBackgroundColor(new ColorRGBA(0.6f, 0.7f, 0.9f, 1));
     }
 
     /**
@@ -78,7 +81,6 @@ public class Test6 extends SimpleApplication {
     private void addLightingBox() {
         // #1 创建一个无光材质
         Material mat = new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md");
-
         // #2 设置纹理贴图
         // 漫反射贴图
         Texture tex = assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall.jpg");
@@ -128,7 +130,6 @@ public class Test6 extends SimpleApplication {
     private void addLightingSphere() {
         // #1 加载一个受光材质
         Material mat = new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md");
-
         // #2 设置参数
         mat.setColor("Diffuse", ColorRGBA.Red);// 在漫射光照射下反射的颜色。
         mat.setColor("Ambient", ColorRGBA.Red);// 在环境光照射下，反射的颜色。

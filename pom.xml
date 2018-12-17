@@ -10,7 +10,7 @@
 
     <properties>
         <jme3_g>org.jmonkeyengine</jme3_g>
-        <jme3_v>3.1.0-stable</jme3_v>
+        <jme3_v>3.2.1-stable</jme3_v>
     </properties>
 
     <repositories>
@@ -21,7 +21,7 @@
     </repositories>
 
     <dependencies>
-        <!--<dependency>
+        <dependency>
             <groupId>${jme3_g}</groupId>
             <artifactId>jme3-core</artifactId>
             <version>${jme3_v}</version>
@@ -30,13 +30,18 @@
             <groupId>${jme3_g}</groupId>
             <artifactId>jme3-desktop</artifactId>
             <version>${jme3_v}</version>
-            <scope>runtime</scope>
+            <!--<scope>runtime</scope>-->
         </dependency>
         <dependency>
             <groupId>${jme3_g}</groupId>
             <artifactId>jme3-lwjgl</artifactId>
             <version>${jme3_v}</version>
-        </dependency>-->
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
         <dependency>
             <groupId>org.jmonkeyengine</groupId>
             <artifactId>jme3-testdata</artifactId>
@@ -57,13 +62,6 @@
             <version>3.2.1-stable</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/lib/jme3-desktop.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.jmonkeyengine</groupId>
-            <artifactId>jme3-core</artifactId>
-            <version>3.2.1-stable</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/resources/lib/jme3-core.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.jmonkeyengine</groupId>
@@ -92,13 +90,6 @@
             <version>3.2.1-stable</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/lib/jme3-jogl.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.jmonkeyengine</groupId>
-            <artifactId>jme3-lwjgl</artifactId>
-            <version>3.2.1-stable</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/resources/lib/jme3-lwjgl.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.jmonkeyengine</groupId>
@@ -155,6 +146,13 @@
             <version>3.2.1-stable</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/lib/jbullet.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>de.jarnbjo</groupId>
+            <artifactId>j-ogg-all</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/j-ogg-all.jar</systemPath>
         </dependency>
     </dependencies>
     <build>

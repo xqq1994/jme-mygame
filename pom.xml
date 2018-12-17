@@ -37,5 +37,12 @@
             <artifactId>jme3-lwjgl</artifactId>
             <version>${jme3_v}</version>
         </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-testdata</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-testdata.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

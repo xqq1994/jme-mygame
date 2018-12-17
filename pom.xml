@@ -21,7 +21,7 @@
     </repositories>
 
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>${jme3_g}</groupId>
             <artifactId>jme3-core</artifactId>
             <version>${jme3_v}</version>
@@ -36,7 +36,7 @@
             <groupId>${jme3_g}</groupId>
             <artifactId>jme3-lwjgl</artifactId>
             <version>${jme3_v}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.jmonkeyengine</groupId>
             <artifactId>jme3-testdata</artifactId>
@@ -44,5 +44,132 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/lib/jme3-testdata.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-blender</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-blender.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-desktop</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-desktop.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-core</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-core.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-effects</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-effects.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-jbullet</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-jbullet.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-jogg</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-jogg.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-jogl</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-jogl.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-lwjgl</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-lwjgl.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-networking</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-networking.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-niftygui</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-niftygui.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-plugins</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-plugins.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-terrain</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jme3-terrain.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>de</groupId>
+            <artifactId>nifty</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/nifty.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>de</groupId>
+            <artifactId>nifty-default-controls</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/nifty-default-controls.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.bushe</groupId>
+            <artifactId>eventbus</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/eventbus.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.bulletphysics</groupId>
+            <artifactId>jbullet</artifactId>
+            <version>3.2.1-stable</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/jbullet.jar</systemPath>
+        </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

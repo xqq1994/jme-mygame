@@ -24,6 +24,7 @@ public class Test6 extends SimpleApplication {
     public static void main(String[] args) {
         // 启动程序
         Test6 app = new Test6();
+        app.setShowSettings(false);
         app.start();
     }
 
@@ -37,17 +38,68 @@ public class Test6 extends SimpleApplication {
         flyCam.setMoveSpeed(10);
 
         // 添加物体
-        addUnshadedBox();
+//        addUnshadedBox();
         addLightingBox();
 
-        addUnshadedSphere();
-        addLightingSphere();
+//        addUnshadedSphere();
+//        addLightingSphere();
 
         // 添加光源
-        addLight();
+//        addLight();
 
         // 把窗口背景改成淡蓝色
         viewPort.setBackgroundColor(new ColorRGBA(0.6f, 0.7f, 0.9f, 1));
+    }
+
+    /**
+     * 创造一个方块，应用无光材质。
+     * @return
+     */
+    private void addUnshadedBox() {
+        // #1 创建一个无光材质
+        Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+
+        // #2 加载一个纹理贴图，设置给这个材质。
+        Texture tex = assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall.jpg");
+        mat.setTexture("ColorMap", tex);// 设置贴图
+
+        // #3 创造1个方块，应用此材质。
+        Geometry geom = new Geometry("普通方块", new Box(1, 1, 1));
+        geom.setMaterial(mat);
+
+        geom.move(4, 0, 0);
+        rootNode.attachChild(geom);
+    }
+
+    /**
+     * 创造一个方块，应用受光材质。
+     * @return
+     */
+    private void addLightingBox() {
+        // #1 创建一个无光材质
+        Material mat = new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md");
+
+        // #2 设置纹理贴图
+        // 漫反射贴图
+        Texture tex = assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall.jpg");
+        mat.setTexture("DiffuseMap", tex);
+
+        // 法线贴图
+        tex = assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall_normal.jpg");
+        mat.setTexture("NormalMap", tex);
+
+        // 视差贴图
+        tex = assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall_height.jpg");
+        mat.setTexture("ParallaxMap", tex);
+
+        // 设置反光度
+        mat.setFloat("Shininess", 2.0f);
+
+        // #3 创造1个方块，应用此材质。
+        Geometry geom = new Geometry("文艺方块", new Box(1, 1, 1));
+        geom.setMaterial(mat);
+
+        rootNode.attachChild(geom);
     }
 
     /**
@@ -96,57 +148,7 @@ public class Test6 extends SimpleApplication {
         rootNode.attachChild(geom);
     }
 
-    /**
-     * 创造一个方块，应用无光材质。
-     * @return
-     */
-    private void addUnshadedBox() {
-        // #1 创建一个无光材质
-        Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
 
-        // #2 加载一个纹理贴图，设置给这个材质。
-        Texture tex = assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall.jpg");
-        mat.setTexture("ColorMap", tex);// 设置贴图
-
-        // #3 创造1个方块，应用此材质。
-        Geometry geom = new Geometry("普通方块", new Box(1, 1, 1));
-        geom.setMaterial(mat);
-
-        geom.move(4, 0, 0);
-        rootNode.attachChild(geom);
-    }
-
-
-    /**
-     * 创造一个方块，应用受光材质。
-     * @return
-     */
-    private void addLightingBox() {
-        // #1 创建一个无光材质
-        Material mat = new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md");
-
-        // #2 设置纹理贴图
-        // 漫反射贴图
-        Texture tex = assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall.jpg");
-        mat.setTexture("DiffuseMap", tex);
-
-        // 法线贴图
-        tex = assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall_normal.jpg");
-        mat.setTexture("NormalMap", tex);
-
-        // 视差贴图
-        tex = assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall_height.jpg");
-        mat.setTexture("ParallaxMap", tex);
-
-        // 设置反光度
-        mat.setFloat("Shininess", 2.0f);
-
-        // #3 创造1个方块，应用此材质。
-        Geometry geom = new Geometry("文艺方块", new Box(1, 1, 1));
-        geom.setMaterial(mat);
-
-        rootNode.attachChild(geom);
-    }
 
     /**
      * 添加光源
